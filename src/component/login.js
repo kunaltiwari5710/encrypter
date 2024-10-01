@@ -1,15 +1,7 @@
-
-import React, { useState } from 'react';
-import { useNavigate } from "react-router-dom";
+import React from "react";
 
 const Login = () => {
-  const [formData, setFormData] = useState({ username: '', password: '' });
-  const [error, setError] = useState('');
-  const redirect = useNavigate();
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
 
 
   return (
@@ -21,7 +13,6 @@ const Login = () => {
           <input
             type="text"
             name='username'
-            value={formData.username}
             required
           />
         </div>
@@ -30,7 +21,6 @@ const Login = () => {
           <input
             type="password"
             name='password'
-            value={formData.password}
             required
           />
         </div>
