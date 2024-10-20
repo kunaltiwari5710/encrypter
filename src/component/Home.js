@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 
 function Home() {
   return (
-<img src = "C:\Users\tanya\Downloads\key.jpg.jpg" width="200" height="180" align= left>
-      
+
 <div className='text'>
       <h2><p>Choose the option you want to perform:</p> </h2>
 <div class="container">
