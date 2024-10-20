@@ -4,11 +4,8 @@ import { Link } from 'react-router-dom';
 
 function Home() {
   return (
-
-<div className='text'>
+    <div className='text'>
       <h2><p>Choose the option you want to perform:</p> </h2>
-<div class="container">
-  
       <nav>
         <ul>
           <li><Link to="/encode" className='a3'>Encode</Link></li>
