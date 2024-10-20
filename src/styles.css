@@ -1,13 +1,14 @@
-/* Global Styles */
+/* General Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom right, #f5f5f5, #e0e0e0);
+    color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,142 +16,154 @@ body {
 }
 
 .container {
-    width: 90%;
-    max-width: 1200px;
+    max-width: 1000px;
+    padding: 2rem;
+    background-color: white;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Modern Art Design Header */
+header {
+    width: 100%;
     text-align: center;
+    margin-bottom: 2rem;
 }
 
-h1 {
+header h1 {
     font-size: 3rem;
-    color: #333;
-    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
 }
 
-p {
+header p {
     font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 2rem;
+    color: #7f8c8d;
+    letter-spacing: 1px;
 }
 
-button {
-    background: #6200ea;
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 30px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-button:hover {
-    background: #3700b3;
-}
-
-/* Card Styles */
-.card {
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 2rem;
-    animation: fadeIn 1s ease-in-out;
-}
-
-.card h2 {
-    color: #6200ea;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.card p {
-    color: #666;
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.card a {
-    text-decoration: none;
-    background: #03dac6;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 25px;
-    transition: background 0.3s ease;
-}
-
-.card a:hover {
-    background: #018786;
-}
-
-/* Image Upload Section */
+/* Artistic Background for Image Uploader */
 .image-upload {
-    margin: 20px 0;
-    background-color: #f1f1f1;
-    padding: 40px;
-    border-radius: 20px;
-    border: 2px dashed #6200ea;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
+    position: relative;
+    width: 80%;
+    height: 300px;
+    background: url('your-modern-art-image.jpg') center/cover no-repeat;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
 .image-upload:hover {
-    background-color: #eceff1;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-.image-upload input {
-    display: none;
-}
-
-.image-upload label {
-    font-size: 1.2rem;
-    color: #6200ea;
+.image-upload input[type="file"] {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     cursor: pointer;
 }
 
-/* Animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+.image-upload:before {
+    content: "Click to Upload Image";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.image-upload:hover:before {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Button Design */
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    margin-top: 2rem;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+}
+
+/* Artistic Image Preview */
+.image-preview {
+    width: 100%;
+    height: 300px;
+    background-color: #ecf0f1;
+    border: 2px dashed #bdc3c7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    transition: all 0.3s ease;
+}
+
+.image-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.image-preview.loading {
+    border-color: #3498db;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.4);
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    100% {
+        box-shadow: 0 0 20px 0 rgba(52, 152, 219, 0);
     }
 }
 
 /* Footer */
-.footer {
-    margin-top: 2rem;
-    color: #555;
+footer {
+    margin-top: 3rem;
+    text-align: center;
     font-size: 0.9rem;
+    color: #95a5a6;
 }
 
-.footer a {
-    color: #6200ea;
+footer a {
+    color: #2980b9;
     text-decoration: none;
-    transition: color 0.3s ease;
+    font-weight: 600;
 }
 
-.footer a:hover {
-    color: #3700b3;
+footer a:hover {
+    text-decoration: underline;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
-
-    .card h2 {
-        font-size: 1.5rem;
-    }
-
-    button {
-        padding: 12px 20px;
-    }
-
-    .image-upload {
-        padding: 20px;
-    }
-}
