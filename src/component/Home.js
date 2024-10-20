@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom';
 function Home() {
   return (
     <div className='text'>
-      <h2>Welcome to Your Image Encrypter Website</h2>
-      <p>Choose the option you want to perform:</p>
+      <h2><p>Choose the option you want to perform:</p> </h2>
       <nav>
         <ul>
           <li><Link to="/encode" className='a3'>Encode</Link></li>
