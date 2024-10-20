@@ -5,7 +5,7 @@ box-sizing: border-box;
 }
 body {
 background-color: #4FFFB0; /* Set the background color to aqua */ margin: 0;
-font-family: Elephant, sans-serif;
+font-family: Arial Rounded MT Bold, sans-serif;
 }
 header {
 background-color: #002244; font-family: Playbill; font-size: 26px;
